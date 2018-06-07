@@ -9,6 +9,6 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       - ./nginx/letsencrypt-site:/usr/share/nginx/html
     networks:
-      - frontend
+      - docker
 networks: 
-      frontend:
+      docker:
