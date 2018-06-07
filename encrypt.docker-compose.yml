@@ -1,0 +1,14 @@
+version: "3.1"
+services:
+  nginx-letsencrypt:
+    container_name: 'letsencrypt-nginx-container'
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/letsencrypt-site:/usr/share/nginx/html
+    networks:
+      - frontend
+networks: 
+      frontend:
